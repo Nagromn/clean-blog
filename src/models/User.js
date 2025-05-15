@@ -7,12 +7,12 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     username: {
         type: String,
-        required: true,
-        unique: true
+        required: [true, 'Username is required'],
+        unique: [true, 'Username already exists'],
     },
     password: {
         type: String,
-        required: true
+        required: [true, 'Password is required'],
     }
 });
 
